@@ -22,7 +22,7 @@ namespace Data
         
 
         public string Adress { get; set; }  
-
+        public string cc { get; set; }
 
 
     }
