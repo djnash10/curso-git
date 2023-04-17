@@ -30,7 +30,7 @@ namespace Business
                 // Validar que el usuario a eliminar exista en la base de datos
                 if (await GetUserById(id) == null)
                 {
-                    throw new ArgumentException("user not found");
+                    throw new ArgumentException("user not found...");
                 }
 
                 await _userService.DeleteUser (id);
@@ -46,7 +46,7 @@ namespace Business
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("An error occurred while retrieving the list of users.", ex);
+                    throw new Exception("An error occurred while retrieving the list of users...", ex);
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace Business
                     var user = await _userService.GetUserById (id);
                     if (user == null)
                     {
-                        throw new Exception($"User with id {id} not found.");
+                        throw new Exception($"User with id {id} not found...");
                     }
                     return user;
                 }
@@ -74,7 +74,7 @@ namespace Business
         {
             if (await CheckEmailExists(user.Email))
             {
-                throw new Exception("Email already exists");
+                throw new Exception("Email already exists...");
             }
 
             await _userService.InsertUser(user);
@@ -86,7 +86,7 @@ namespace Business
                 // Validar que el usuario a actualizar exista en la base de datos
                 if (await GetUserById(user.Id) == null)
                 {
-                    throw new ArgumentException("user not found");
+                    throw new ArgumentException("user not found...");
                 }
 
                 await _userService.UpdateUser(user);
